@@ -26,7 +26,11 @@ When you run that image, Docker creates a container.
 Remember: An image is not a running application. A container is the running instance of an image.
 
 
-| Header 1 | Header 2 | Header 3 |
-| :--- | :----: | ---: |
-| Left aligned text | Centered text | Right aligned text |
-| Item A | Item B | Item C |
+| Docker Image | Header 2 | Docker Container |
+| :--- |  ---: |
+| Left aligned text | Right aligned text |
+| Read-only template | 	Running instance of an image |
+| Used to create containers| Executes applications |
+| Doesn't run by itself | Can run, stop, restart |
+| Immutable layers | Has a writable layer |
+| Can create multiple containers | 	Created from an image |
