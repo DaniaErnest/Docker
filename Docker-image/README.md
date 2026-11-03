@@ -28,7 +28,6 @@ Remember: An image is not a running application. A container is the running inst
 
 | Docker Image | Docker Container |
 | :--- |  ---: |
-| Left aligned text | Right aligned text |
 | Read-only template | 	Running instance of an image |
 | Used to create containers| Executes applications |
 | Doesn't run by itself | Can run, stop, restart |
