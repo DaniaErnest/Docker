@@ -11,7 +11,7 @@ An image contains everything an application needs to run, including:
 - Dependencies.
 - Configuration.
 - Default startup command.
-For example, if you have a Node.js application, its Docker image could contain:
+** For example, if you have a Node.js application, its Docker image could contain: **
 ```Node.js runtime
 Application source code
 package.json
@@ -24,3 +24,9 @@ Startup command
 When you run that image, Docker creates a container.
 
 Remember: An image is not a running application. A container is the running instance of an image.
+
+
+| Header 1 | Header 2 | Header 3 |
+| :--- | :----: | ---: |
+| Left aligned text | Centered text | Right aligned text |
+| Item A | Item B | Item C |
