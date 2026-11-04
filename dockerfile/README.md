@@ -71,9 +71,7 @@ Instead of executing commands all over the filesystem, you work inside /app.
 For example:
 ```Dockerfile
 FROM node:22-alpine
-```
 
-```Dockerfile
 WORKDIR /app
 ```
 
