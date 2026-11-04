@@ -164,61 +164,75 @@ The important difference:
 | Not automatically available at runtime | Available in the container |
 | Not suitable for secrets | Not suitable for secrets |
 
-G. EXPOSE — Documenting application ports
-Example:
-EXPOSE 3000
+**G. EXPOSE — Documenting application ports**
 
+Example:
+```Dockerfile
+EXPOSE 3000
+```
 
 This documents that the application listens on port 3000.
 
 Important: EXPOSE does not publish the port to your host machine.
 
 To publish it:
+```Dockerfile
 docker run -d -p 3000:3000 myapp:v1
-
+```
 
 Remember:
+```Dockerfile
 -p HOST_PORT:CONTAINER_PORT
+```
 
+**H. CMD — Default container startup command**
 
-H. CMD — Default container startup command
 Example:
+```Dockerfile
 CMD ["npm", "start"]
-
+```
 
 This specifies the default command executed when a container starts.
 
 Another example:
+```Dockerfile
 CMD ["python", "app.py"]
-
+```
 
 CMD can be overridden when you run the container.
 
 For example:
+```Dockerfile
 docker run myapp:v1 npm run test
+```
 
+**I. ENTRYPOINT — Defining the main executable**
 
-I. ENTRYPOINT — Defining the main executable
 Example:
+```Dockerfile
 ENTRYPOINT ["python", "app.py"]
-
+```
 
 ENTRYPOINT defines the main executable for the container.
 
 Unlike CMD, it is not normally replaced simply by providing another command to docker run.
 
 For example:
+```Dockerfile
 ENTRYPOINT ["python", "app.py"]
+
 CMD ["--port", "3000"]
+```
 
 
 Running:
+```Dockerfile
 docker run myapp:v1 --port 5000
-
-
+```
 Executes:
+```Dockerfile
 python app.py --port 5000
-
+```
 
 CMD vs ENTRYPOINT
 This is a very popular Docker interview question.
