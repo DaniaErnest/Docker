@@ -56,6 +56,7 @@ FROM golang:1.24-alpine
 
 
 DevOps tip: Choose a trusted, maintained base image and use a deliberate version. Smaller images can reduce download time and attack surface, but don't sacrifice compatibility or security.
+
 **B. WORKDIR — Setting the working directory**
 
 Example:
