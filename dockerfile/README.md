@@ -115,49 +115,54 @@ Other examples:
 ```Dockerfile
 RUN apt-get update
 ```
-
-
+```Dockerfile
 RUN pip install -r requirements.txt
-
-
+```
+```Dockerfile
 RUN npm ci
-
-
+```
 Important distinction:
 - RUN executes during image building.
 - CMD executes when a container starts.
 We'll explore CMD shortly.
-E. ENV — Setting environment variables
-Example:
-ENV NODE_ENV=production
 
+**E. ENV — Setting environment variables**
+Example:
+```Dockerfile
+ENV NODE_ENV=production
+```
 
 This sets an environment variable inside the image, which is available to containers created from it.
 
 Another example:
+```Dockerfile
 ENV PORT=3000
-
+```
 
 Your application can access this variable at runtime.
 
 Be careful: don't put passwords, API keys, or other secrets directly into Dockerfiles using ENV or ARG. Use runtime secret management instead.
-F. ARG — Build-time variables
-Example:
-ARG APP_VERSION=1.0.0
 
+**F. ARG — Build-time variables**
+Example:
+```Dockerfile
+ARG APP_VERSION=1.0.0
+```
 
 ARG defines a variable available during the image build.
 
 You can override it:
+```Dockerfile
 docker build --build-arg APP_VERSION=2.0.0 -t myapp:v2 .
-
+```
 
 The important difference:
-ARG	ENV
-Primarily build-time	Runtime environment
-Can be overridden during build	Can be overridden when running container
-Not automatically available at runtime	Available in the container
-Not suitable for secrets	Not suitable for secrets
+| ARG |	ENV |
+| :--- | ---: |
+| Primarily build-time | Runtime environment |
+| Can be overridden during build | Can be overridden when running container |
+| Not automatically available at runtime | Available in the container |
+| Not suitable for secrets | Not suitable for secrets |
 
 G. EXPOSE — Documenting application ports
 Example:
