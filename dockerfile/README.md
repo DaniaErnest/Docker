@@ -237,6 +237,8 @@ python app.py --port 5000
 **CMD vs ENTRYPOINT**
 
 This is a very popular Docker interview question.
+| ARG |	ENV |
+| :--- | ---: |
 | CMD | ENTRYPOINT |
 | Provides default command or arguments | Defines the main executable |
 | Easily overridden by docker run command | Normally remains in place |
