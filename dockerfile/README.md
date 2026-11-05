@@ -157,9 +157,8 @@ docker build --build-arg APP_VERSION=2.0.0 -t myapp:v2 .
 ```
 
 The important difference:
-
-| :--- | ---: |
 | Primarily build-time | Runtime environment |
+| :--- | ---: |
 | Can be overridden during build | Can be overridden when running container |
 | Not automatically available at runtime | Available in the container |
 | Not suitable for secrets | Not suitable for secrets |
