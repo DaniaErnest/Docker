@@ -157,7 +157,7 @@ docker build --build-arg APP_VERSION=2.0.0 -t myapp:v2 .
 ```
 
 The important difference:
-| ARG |	ENV |
+
 | :--- | ---: |
 | Primarily build-time | Runtime environment |
 | Can be overridden during build | Can be overridden when running container |
@@ -237,7 +237,6 @@ python app.py --port 5000
 **CMD vs ENTRYPOINT**
 
 This is a very popular Docker interview question.
-| ARG |	ENV |
 | :--- | ---: |
 | CMD | ENTRYPOINT |
 | Provides default command or arguments | Defines the main executable |
