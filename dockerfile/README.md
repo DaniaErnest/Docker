@@ -258,3 +258,35 @@ Why does this matter?
 Running applications as root increases the impact of a potential compromise.
 
 In production, you should generally use a non-root user unless there is a specific reason not to.
+
+Let's understand the execution:
+```
+Dockerfile execution flow
+1. FROM node:22-alpine
+   
+   Selects the base image.
+2. WORKDIR /app
+   
+   Creates and enters the application directory.
+3. COPY package.json ./*
+   
+   Copies dependency manifests.
+4. RUN npm ci
+   
+   Installs dependencies.
+5. COPY . .
+   
+   Copies the application source code.
+6. ENV NODE_ENV=production
+   
+   Sets the runtime environment.
+7. EXPOSE 3000
+   
+   Documents the application port.
+8. USER node
+   
+   Switches to a non-root user.
+9. CMD ["npm", "start"]
+   
+   Defines the default startup command.
+```
