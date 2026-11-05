@@ -237,16 +237,19 @@ python app.py --port 5000
 **CMD vs ENTRYPOINT**
 
 This is a very popular Docker interview question.
-|CMD	ENTRYPOINT |
-Provides default command or arguments	Defines the main executable
-Easily overridden by docker run command	Normally remains in place
-Often used for default arguments	Often used for the main application
+| CMD | ENTRYPOINT |
+| Provides default command or arguments | Defines the main executable |
+| Easily overridden by docker run command | Normally remains in place |
+| Often used for default arguments | Often used for the main application|
 
-Professional practice: The exec form using JSON arrays is generally preferred for application startup because it handles signals and process management more correctly.
-J. USER — Running containers without root
+**Professional practice:** The exec form using JSON arrays is generally preferred for application startup because it handles signals and process management more correctly.
+
+**J. USER — Running containers without root**
+
 Example:
+```Dockerfile
 USER node
-
+```
 
 This tells Docker to run subsequent build instructions and the container's default process as the specified user.
 
